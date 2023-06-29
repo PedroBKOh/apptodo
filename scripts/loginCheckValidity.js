@@ -159,10 +159,6 @@
         emailInputLoginRef.addEventListener('keyup', (event) => validateInput(event))
         senhaInputLoginRef.addEventListener('keyup', (event) => validateInput(event))
 
-
-
-        
-
        
 
     // Função fixa o botão após click inserindo class CSS. // Adicionado parte do código para singup via API.
@@ -189,7 +185,7 @@
                         response.json().then(
                             security => {
                                 localStorage.setItem('jwt', security.jwt)
-                                window.location.href = 'tarefas.html'
+                                window.location.href = '../pages/tarefas.html'
                                 
                             }
                         )

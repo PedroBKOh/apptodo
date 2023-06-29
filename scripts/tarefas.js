@@ -592,7 +592,7 @@ function logOut() {
     // Limpeza no localStorage
     localStorage.clear()
     // Redirecionamento para o Login
-    window.location.href = 'index.html'
+    window.location.href = '../index.html'
 
 }
 
@@ -602,19 +602,7 @@ function logOut() {
 function deleteTask(task) {
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Criar função!-----------------------------------------------------------------!!!!!!!!!!!!!!!!!
 
 }
 
@@ -659,7 +647,7 @@ function deleteTask(task) {
     }
 
 
-//----------------- DESCREVER...
+//----------------- DOCUMENTAR-------------------!!!!!!!!!!!!
 function completeTask(task) {
 
     let taskCompleted = task
@@ -686,7 +674,7 @@ function completeTask(task) {
 
 }
 
-//----------------- DESCREVER...
+//----------------- DOCUMENTAR-------------------!!!!!!!!!!!!
 function addEventListenersToTasks() {
 
     const openTaskListItensRef = Array.from(openTasksListRef.children)
@@ -728,7 +716,7 @@ function insertTasksHtml() {
     addEventListenersToTasks()
 }
 
-//----------------- DESCREVER...
+//----------------- DOCUMENTAR-------------------!!!!!!!!!!!!
 function checkTasks(tasks) {
     for(let task of tasks) {
         if(task.completed) {
