@@ -173,12 +173,11 @@ header {
   transition: background-color 200ms linear;
 }
 
-/* Pedro ----------------------------------------------------------- INICIO */
-
 .tarefa .not-done:hover {
-  background-color: rgb(0, 255, 0);
+  background-color: var(--secondary);
 }
 
+/* Pedro ----------------------------------------------------------- INICIO */
 .tarefa2 {
   display: flex;
   align-items: center;
@@ -191,11 +190,9 @@ header {
   width: 1.5em;
   background-color: white;
   box-shadow: 2px 2px 5px lightgrey;
-  border: 2px solid red;
-  border-radius: 50%;
+  border: 2px solid var(--secondary);
   z-index: 2;
   transition: background-color 200ms linear;
-  margin-right: 1em;
 }
 
 .tarefa2 .not-done2:hover {
@@ -210,7 +207,7 @@ header {
   display: block;
   height: 3em;
   width: 2px;
-  background-color: red;
+  background-color: var(--secondary);
 }
 
 .tarefa2:not(:last-child) .not-done2::after {
@@ -221,7 +218,7 @@ header {
   display: block;
   height: 4.5em;
   width: 2px;
-  background-color: red;
+  background-color: var(--secondary);
 }
 
 .tarefa2 .descricao2 {
@@ -229,33 +226,21 @@ header {
   align-items: center;
   justify-content: space-between;
   flex: 1;
-  background-color: #ad8e8e33;
+  background-color: white;
   padding: 1em 2em;
-  box-shadow: 2px 2px 5px rgb(0, 0, 0);
-  color: rgb(85, 85, 85);
-  text-decoration: line-through rgba(0, 0, 0, 0.329);
+  box-shadow: 2px 2px 5px lightgrey;
 }
 
 .tarefa2 .nome2 {
-  color: rgb(255, 255, 255);
+  color: rgb(95, 95, 95);
   font-size: .85em;
-  color: rgb(85, 85, 85);
-
 }
 
 .tarefa2 .timestamp2 {
   font-size: .65em;
-  color: rgb(255, 255, 255);
-  color: rgb(85, 85, 85);
-
+  color: rgb(134, 134, 134);
 }
 
-.tarefa2 .id2 {
-  font-size: .7em;
-  color: rgb(255, 255, 255);
-  color: rgb(85, 85, 85);
-
-}
 
 /* Pedro ----------------------------------------------------------- FIM */
 
@@ -316,10 +301,10 @@ header {
   width: 8em;
   text-align: center;
   padding: .5em 1em;
-  background-color: #ad8e8e42;
+  background-color: white;
   border-radius: .2em;
   box-shadow: 3px 3px 5px lightgrey;
-  color: #858484;
+  color: rgb(170, 170, 170);
   font-weight: 400;
   font-size: 1.1em;
   margin-left: calc(15% - 4em);
@@ -397,28 +382,7 @@ header {
 .avatar {
   border-radius: 50%!important;
 }
-
-.check-box2 {
-  text-decoration: none);
-
 }
-
-
-
-.check-box .radio {
-  text-decoration: none);
-
-}
-
-.checkmark:after{
-  background: red;
-}
-
-div .check-box2{
-  text-decoration:none;
-
-}
-
 /* ----------- FIM */
 
 

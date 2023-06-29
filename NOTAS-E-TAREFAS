@@ -4,14 +4,14 @@
 ----------------- FAZER ----------------- IMPORTANTE!
 1. Padronizar formatação do código (todos)
 2. Verificar e incluir descrição das funções
-3. Criar as funções de tarefas terminadas.
+// 3. Criar as funções de tarefas terminadas. ------------------------- CONCLUIDO PEDRO
 4. Corrigir na página de tarefas o menu "Tarefas". Perdeu estilização.
-5. Alterar e ajustar função do DELETE tarefas.
-6. Criar a função do botão LOGOUT.
+// 5. Alterar e ajustar função do DELETE tarefas. --------------------- CONCLUIDO PEDRO
+// 6. Criar a função do botão LOGOUT.---------------------------------- CONCLUIDO PEDRO
 7. Criar função que ajusta o numero do id alinhado com a inclusão da tarefa.
-8. Mudar a cor do botão de excluir tarefa "CONCLUIDA" para red. Incluir icone lixeira.
-9. Mostrar alert antes da exclusão da tarefa.
-9. Mudar a cor do botão "CONCLUIDO" para verde e fixar cor. Incluir icone CHECK.
+8. Mudar a cor do botão de excluir tarefa "CONCLUIDA" para red. Incluir icone lixeira. ----------- PARCIAL PEDRO
+// 9. Mostrar alert antes da exclusão da tarefa. ---------------------- CONCLUIDO PEDRO
+9. Mudar a cor do botão "CONCLUIDO" para verde e fixar cor. Incluir icone CHECK. ----------------- PARCIAL PEDRO
 10. Mostrar texto "Nenhuma tarefa Pendente!" na página de tarefas.
 11. Normalizar dados de entrado do input (trim).
 
@@ -21,9 +21,9 @@
 2. Incluir o REGEX no validador de email e senha. (ver Referencia)
 3. Criar função de reordenar tarefas. (Ver referencia)
 4. Criar função com botão de excluir tarefa pendente. (Pesquisar)
-5. Criar função para exibir senha e icone. (Ver referencia)
-6. Exibir hora na tarefa, posicionado em baixo da data. (Pesquisar)
-7. Criar função para voltar a tarefa de concluido para pendente. Criar botão para esta função. (Pesquisar)
+5. Criar função para exibir senha e icone. (Ver referencia) ---------------------------------------
+6. Exibir hora na tarefa, posicionado em baixo da data. (Pesquisar) -------------------------------
+7. Criar função para voltar a tarefa de concluido para pendente. Criar botão para esta função. (Pesquisar) ------------ CONCLUIDO PEDRO
 8. Criar uma página de PERFIL, onde o user pode alterar o avatar. (Ver referencia)
 
 
