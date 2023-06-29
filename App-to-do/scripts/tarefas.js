@@ -549,7 +549,18 @@
 
 
 
-// ----- Código atualizado 28/06/23 modificado pedro  ----- #4 ----- INICIO
+
+
+
+
+
+
+
+
+
+
+
+// ----- Código atualizado 28/06/23 modificado Pedro  ----- #4 ----- INICIO
 // Variavel responsavel por armazenar a URL Base para nossa API
 const apiBaseUrl = 'https://todo-api.ctd.academy/v1'
 
@@ -585,58 +596,70 @@ function logOut() {
 
 }
 
+
+//------------------ TEM QUE FAZER ----------------------------------------------
+
 function deleteTask(task) {
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
+// Função pega o nome e sobrenome do usuario e mostra na tela de tarefas.
+    function getUser() {
 
-//----------------------------------------------------------------
+        // Objeto de Configuracao da Request
+        const requestSettings = {
+            method: 'GET',
+            headers: requestHeadersAuth
+        }
 
-function getUser() {
-
-    // Objeto de Configuracao da Request
-    const requestSettings = {
-        method: 'GET',
-        headers: requestHeadersAuth
-    }
-
-    // Request para obter as tarefas
-    fetch(`${apiBaseUrl}/users/getMe`, requestSettings).then
-    (
-        response => 
-        {
-            // Verificacao se deu tudo certo com a Request
-            if(response.ok) 
+        // Request para obter as tarefas
+        fetch(`${apiBaseUrl}/users/getMe`, requestSettings).then
+        (
+            response => 
             {
-                response.json().then
-                (
-                    user => 
-                    {
-                        localStorage.setItem('user', JSON.stringify(user))
-                        const userNameRef = document.getElementById('userName')
-                        userNameRef.innerText = `${user.firstName} ${user.lastName}` 
-                    }
-                )
-            } 
-            else 
-            {
-                // Verificacao se o Status da Request é 401(Nao autorizado)
-                if(response.status === 401) 
+                // Verificacao se deu tudo certo com a Request
+                if(response.ok) 
                 {
-                    // Caso seja, a aplicacao ira realizar o Logout do usuario
+                    response.json().then
+                    (
+                        user => 
+                        {
+                            localStorage.setItem('user', JSON.stringify(user))
+                            const userNameRef = document.getElementById('userName')
+                            userNameRef.innerText = `${user.firstName} ${user.lastName}` 
+                        }
+                    )
+                } 
+                else 
+                {
+                    // Verificacao se o Status da Request é 401(Nao autorizado)
+                    if(response.status === 401) 
+                    {
+                        // Caso seja, a aplicacao ira realizar o Logout do usuario
+                    }
                 }
             }
-        }
-    )
+        )
 
-}
-
-//------------------------
+    }
 
 
-//--------------------------------------------------------------------------
-
+//----------------- DESCREVER...
 function completeTask(task) {
 
     let taskCompleted = task
@@ -663,6 +686,7 @@ function completeTask(task) {
 
 }
 
+//----------------- DESCREVER...
 function addEventListenersToTasks() {
 
     const openTaskListItensRef = Array.from(openTasksListRef.children)
@@ -707,6 +731,7 @@ function insertTasksHtml() {
 
 }
 
+//----------------- DESCREVER...
 function checkTasks(tasks) {
 
     for(let task of tasks) {
@@ -825,7 +850,7 @@ submitButtonNewTaskRef.addEventListener('click', event => createTask(event))
 // Execucao da funcao para checar a autenticidade do usuario na aplicacao
 checkAuthUser()
 
-
+//Função verifica se existe a informação do usuário no LocalStorage, se houver não houver faz uma fetch requisitando o getMe pra API.
 if(localStorage.getItem('user') === null)
 {
     getUser()
@@ -866,6 +891,8 @@ function validateAdicionaTarefa(event) {
     }
 }
 newTaskInputRef.addEventListener('keyup', (event) => validateAdicionaTarefa(event))
+
+
 
 // Função do botão Log Out
 // const logOutButtonRef = document.querySelector('#logOutButton')
