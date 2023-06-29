@@ -557,10 +557,12 @@
 
 
 
-
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
 
 
 // ----- Código atualizado 28/06/23 modificado Pedro  ----- #4 ----- INICIO
+import {logOut} from './logOut.js'
+
 // Variavel responsavel por armazenar a URL Base para nossa API
 const apiBaseUrl = 'https://todo-api.ctd.academy/v1'
 
@@ -586,15 +588,6 @@ var userTasks = {
     closeds: [] // Array utilizado para armazenar as nossas tarefas concluidas
 }
 
-// Funcao que realiza o Logout
-function logOut() {
-
-    // Limpeza no localStorage
-    localStorage.clear()
-    // Redirecionamento para o Login
-    window.location.href = '../index.html'
-
-}
 
 
 //------------------ TEM QUE FAZER ----------------------------------------------
@@ -883,11 +876,6 @@ function validateAdicionaTarefa(event) {
 newTaskInputRef.addEventListener('keyup', (event) => validateAdicionaTarefa(event))
 
 
-
-
-// Função do botão Log Out
-// const logOutButtonRef = document.querySelector('#logOutButton')
-// logOutButtonRef.addEventListener('click', () => getUserName())
 
 // // ----- #4 FIM
 

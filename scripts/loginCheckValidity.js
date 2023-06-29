@@ -91,8 +91,10 @@
 
 // // ----- #1 FIM ----- 
 
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
 
 // ----- Parte do código copiado do signupCheckValidity.js ----- #2 INICIO
+
     // Variáveis globais
         const apiBaseUrl = 'https://todo-api.ctd.academy/v1'
 
@@ -197,6 +199,11 @@
         
         }
         buttonSubmitLoginRef.addEventListener('click', (event) => manterClicado(event))
+
+    //-----------------------
+        function logOut() {
+
+        }
 
 
 // ----- #2 FIM ----- 
