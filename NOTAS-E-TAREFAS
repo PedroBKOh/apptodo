@@ -12,17 +12,19 @@
 8. Mudar a cor do botão de excluir tarefa "CONCLUIDA" para red. Incluir icone lixeira.
 9. Mostrar alert antes da exclusão da tarefa.
 9. Mudar a cor do botão "CONCLUIDO" para verde e fixar cor. Incluir icone CHECK.
+10. Mostrar texto "Nenhuma tarefa Pendente!" na página de tarefas.
+11. Normalizar dados de entrado do input (trim).
 
 
 ----------------- PLUS ----------------- OPCIONAL!
-1. Incluir api que gera login. Pegar a foto para mostrar no user.
-2. Incluir o REGEX no validador de email e senha.
-3. Criar função de reordenar tarefas.
-4. Criar função com botão de excluir tarefa pendente.
-5. Criar função para exibir senha e icone.
-6. Exibir hora na tarefa, posicionado em baixo da data.
-7. Criar função para voltar a tarefa de cocluido para pendente. Criar botão para esta função.
-8. Criar uma página de PERFIL, onde o user pode alterar o avatar.
+1. Incluir api que gera login. Pegar a foto para mostrar no user. (Ver referencia)
+2. Incluir o REGEX no validador de email e senha. (ver Referencia)
+3. Criar função de reordenar tarefas. (Ver referencia)
+4. Criar função com botão de excluir tarefa pendente. (Pesquisar)
+5. Criar função para exibir senha e icone. (Ver referencia)
+6. Exibir hora na tarefa, posicionado em baixo da data. (Pesquisar)
+7. Criar função para voltar a tarefa de concluido para pendente. Criar botão para esta função. (Pesquisar)
+8. Criar uma página de PERFIL, onde o user pode alterar o avatar. (Ver referencia)
 
 
 ----------------- REALIZADO -----------------
@@ -30,3 +32,68 @@
 2. Alteração do botão de submit do formulário de cadastro e login. (Pedro)
 2. Inclusão do ID na página de tarefas. (Pedro)
 3. Criação de função que mostra a quantidade de tarefas pendentes. (Pedro)
+
+
+
+----------------- REFERÊNCIAS -----------------
+
+1. e 8. Site de imagens de usuario
+https://randomuser.me/photos
+
+3. Drag and Drop
+https://www.youtube.com/watch?v=6wn8hpUcEcM
+https://github.com/rocketseat-content/youtube-masterclass-drag-and-drop-raiz/blob/master/script.js
+https://www.w3schools.com/html/html5_draganddrop.asp
+
+
+2. Modelos de Função para validação
+
+        function retiraEspacosDeUmValorInformado(valorRecebido) {
+        return valorRecebido.trim();
+        }
+
+
+        function converteValorRecebidoParaMinusculo(valorRecebido) {
+        return valorRecebido.toLowerCase();
+        }
+
+        function lowerCaseValue(value) {
+        return value.toLowerCase();
+        }
+
+
+        function validationSpacePasswd(evt) {
+        if (evt.code === "Space") {
+        evt.preventDefault();
+        passVerify.innerText = "Espaços não são permitidos.";
+        } else {
+        passVerify.innerText = "";
+        }
+        }
+
+        
+        function validaEmailRecebido(emailRecebido) {
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailRecebido)) {
+            return true;
+        } else {
+            return false;
+        }
+        }
+
+
+        let mailRegex =
+        /^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
+
+        function validMail(mail) {
+        mail.toLowerCase();
+        if (mailRegex.test(mailInput.value)) {
+        mailVerify.innerText = "";
+        mailInput.style.border = "none";
+        return true;
+        } else {
+        mailVerify.innerText = "E-mail inválido";
+        mailInput.style.border = "1px solid #FF0000";
+        return false;
+        }
+        }
+

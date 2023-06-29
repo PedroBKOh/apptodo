@@ -31,9 +31,11 @@ header {
   height: 2em;
   width: 2em;
   border-radius: 50%;
-  background-color: white;
-  opacity: .4;
+  background-color: none;
+  position: relative;
+  /* opacity: .4; */ */
   margin-left: .7em;
+  padding-left: 2em;
 }
 
 /* Pedro ----------------------------------------------------------- INICIO */
@@ -308,6 +310,11 @@ header {
   cursor: default;
   text-align: center;
   color: grey;
+}
+
+.avatar {
+  border-radius: 50%!important;
+}
 }
 /* ----------- FIM */
 
