@@ -803,7 +803,7 @@
                         console.log(response)
                         if(response.ok) {
                             alert('usuario cadastrado com sucesso')
-                            window.location.href="index.html"
+                            window.location.href="../index.html"
                         } else {
                             alert('esse e-mail ja foi cadastrado')
                         }
