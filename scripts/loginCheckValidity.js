@@ -185,7 +185,7 @@
                         response.json().then(
                             security => {
                                 localStorage.setItem('jwt', security.jwt)
-                                window.location.href = '../pages/tarefas.html'
+                                window.location.href = './pages/tarefas.html'
                                 
                             }
                         )
