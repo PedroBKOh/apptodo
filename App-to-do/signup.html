@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do App</title>
+  <!-- ---------------- estilos compartilhados entre login e signup ---------------- -->
+  <link rel="stylesheet" href="./styles/acesso.css">
+  <!-- ---------------------- lógica aplicada no registro -------------------- -->
+  <script src="./scripts/signupCheckValidity.js" type="module" defer></script>
+
+</head>
+
+<body>
+  <div class="left">
+    <img src="./assets/pessoa-signup.png" alt="">
+  </div>
+  <div class="right">
+    
+    <form id="form">
+      <div class="form-header">
+        <p>To-Do App</p>
+      </div>
+      <label class="form-control" id="formControlNome">
+        Nome:
+          <input
+            type="text"
+            name="firstName"
+            id="nomeInput"
+            class="valid"
+            required
+            minlength="4"
+            maxlength="40"
+          >
+          <small>Preencha o campo com no mínimo 4 caracteres</small>
+      </label>
+      <label class="form-control" id="formControlSobrenome">
+        Sobrenome:
+        <input 
+          type="text"
+          name="lastName"
+          id="sobrenomeInput"
+          required
+          minlength="4"
+          maxlength="60"
+        >
+        <small>Preencha o campo com no mínimo 4 caracteres</small>
+      </label>
+      <label class="form-control" id="formControlEmail">
+        Email:
+        <input
+          type="email"
+          name="email"
+          id="emailInput"
+          required
+          minlength="6"
+        >
+        <small>Preencha o campo com um email válido</small>
+      </label>
+      <label class="form-control" id="formControlSenha">
+        Senha:
+        <input
+        type="password"
+        name="password"
+        id="senhaInput"
+        required
+        minlength="8"
+        >
+        <span class="lnr lnr-eye"></span>
+        <small>Preencha o campo com no mínimo 8 caracteres</small>
+      </label>
+      <label class="form-control" id="formControlRepetirSenha">
+        Repetir senha:
+        <input
+        disabled
+        type="password"
+        name="passwordRetype"
+        id="repetirSenhaInput"
+        required
+        minlength="8"
+        >
+        <span class="lnr lnr-eye"></span>
+        <small>As senhas não coincidem</small>
+      </label>
+      <button id="buttonSubmit" class="button-submit" disabled>Criar conta</button>
+    </form>
+    <div class="ingressar">
+      <a href="./index.html">Já possui conta? Acesse aqui</a>
+    </div>
+  </div>
+</body>
+
+</html>
