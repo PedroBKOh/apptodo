@@ -209,10 +209,11 @@ header {
 
 .tarefa .nome {
   color: rgb(95, 95, 95);
+  font-size: .85em;
 }
 
 .tarefa .timestamp {
-  font-size: .9em;
+  font-size: .65em;
   color: rgb(134, 134, 134);
 }
 
@@ -285,4 +286,33 @@ header {
   100%{ opacity: 0.8;}
 }
 
+/* Pedro ----------------------------------------------------------- INICIO */
+.num-tarefas {
+  color: blue;
+  display: inline-block;
+  padding: 0.63em 0.15em;
+  font-size: .85em;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+
+.not-done1 {
+  width: 2em;
+  height: 2em;
+  background-color: var(--app-grey);
+  margin-right: 1em;
+  border-radius: 50%;
+  cursor: default;
+  text-align: center;
+  color: grey;
+}
+/* ----------- FIM */
+
+
+
+/* Pedro ----------------------------------------------------------- INICIO */
+/* ----------- FIM */
 

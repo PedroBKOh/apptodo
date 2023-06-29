@@ -678,7 +678,7 @@ function completeTask(task) {
             if(response.ok) {
                 getTasks()
 
-                location.reload() //-------------------------------------------pedro-------------------------------//
+                location.reload() //-------------------------------------------Adicionado Pedro-------------------------------//
                 getUserName()
             }
         }
@@ -719,34 +719,35 @@ function insertTasksHtml() {
                 <div class="not-done"></div>
                 <div class="descricao">
                     <p class="nome">${task.description}</p> 
-                    <p class="id">#${task.id}</p> <!-- ---------------------------- PEDRO ----------------------------------------->
+                    <p class="id">#${task.id}</p> <!-- ---------------------------- Adicionado PEDRO ----------------------------------------->
                     <p class="timestamp">Criada em: ${taskDateFormated}</p>
                 </div>
             </li>
         `
-
     }
-
     addEventListenersToTasks()
-
 }
 
 //----------------- DESCREVER...
 function checkTasks(tasks) {
-
     for(let task of tasks) {
-
         if(task.completed) {
-
             userTasks.closeds.push(task)
-
         } else {
-
             userTasks.openeds.push(task)
-
         }
-
     }
+
+//---- Função que captura e mostra a qt de itens na task opened ----------------------
+    function taskCounter() 
+    {
+        var totalTaskOpen = 0;
+        const totalTaskOpenRef = document.getElementById('numTarefas')
+        totalTaskOpenRef.innerHTML = `#${userTasks.openeds.length}`
+    }
+    taskCounter()    
+//------------------------------------------------------------------------------------
+    
 
     // Caso tenha dado tudo certo com a Request, nos chamamos a funcao para inserir as Tasks no HTML
     setTimeout(() => insertTasksHtml(), 800)
@@ -822,7 +823,8 @@ async function createTask(event) {
         // Toda vez que fazemos uma requisicao para criarmos uma nova tarefa, ela no final das contas é criada no Banco de Dados, porem, 
         //a listagem que esta sendo mostrada para o usuario nao contem essa nova tarefa criada. Por isso que precisamos obter as tarefas novamente
         // getTasks()
-        location.reload() //----------------------------------------------pedro--------------------------------
+
+        location.reload() //-------------------------------------------corrigir para a função de atualizar as tasks--------------------------------
     }
     
 }
@@ -891,6 +893,7 @@ function validateAdicionaTarefa(event) {
     }
 }
 newTaskInputRef.addEventListener('keyup', (event) => validateAdicionaTarefa(event))
+
 
 
 

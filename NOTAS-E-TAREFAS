@@ -1,0 +1,32 @@
+
+
+
+----------------- FAZER ----------------- IMPORTANTE!
+1. Padronizar formatação do código (todos)
+2. Verificar e incluir descrição das funções
+3. Criar as funções de tarefas terminadas.
+4. Corrigir na página de tarefas o menu "Tarefas". Perdeu estilização.
+5. Alterar e ajustar função do DELETE tarefas.
+6. Criar a função do botão LOGOUT.
+7. Criar função que ajusta o numero do id alinhado com a inclusão da tarefa.
+8. Mudar a cor do botão de excluir tarefa "CONCLUIDA" para red. Incluir icone lixeira.
+9. Mostrar alert antes da exclusão da tarefa.
+9. Mudar a cor do botão "CONCLUIDO" para verde e fixar cor. Incluir icone CHECK.
+
+
+----------------- PLUS ----------------- OPCIONAL!
+1. Incluir api que gera login. Pegar a foto para mostrar no user.
+2. Incluir o REGEX no validador de email e senha.
+3. Criar função de reordenar tarefas.
+4. Criar função com botão de excluir tarefa pendente.
+5. Criar função para exibir senha e icone.
+6. Exibir hora na tarefa, posicionado em baixo da data.
+7. Criar função para voltar a tarefa de cocluido para pendente. Criar botão para esta função.
+8. Criar uma página de PERFIL, onde o user pode alterar o avatar.
+
+
+----------------- REALIZADO -----------------
+1. Alteração da cor da barra lateral do formulário de cadastro e login. (Pedro)
+2. Alteração do botão de submit do formulário de cadastro e login. (Pedro)
+2. Inclusão do ID na página de tarefas. (Pedro)
+3. Criação de função que mostra a quantidade de tarefas pendentes. (Pedro)
