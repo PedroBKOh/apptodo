@@ -198,12 +198,21 @@
             )
         
         }
+    //-------------------
         buttonSubmitLoginRef.addEventListener('click', (event) => manterClicado(event))
 
-    //-----------------------
-        function logOut() {
+    //Visualizando o valor dos campos de Senha clicando no ícone de olho
+        const eyeSeeLogin = document.getElementById('eyeLogin');
+        eyeSeeLogin.addEventListener('click', () => {
 
-        }
-
+            if(senhaInputLoginRef.getAttribute('type') === 'password'){
+                senhaInputLoginRef.setAttribute('type', 'text');
+                eyeSeeLogin.setAttribute('src', '../assets/eye.svg');
+            }
+            else if(senhaInputLoginRef.getAttribute('type') === 'text'){
+                senhaInputLoginRef.setAttribute('type', 'password');    
+                eyeSeeLogin.setAttribute('src', '../assets/eye-off.svg');
+            } 
+        });
 
 // ----- #2 FIM ----- 

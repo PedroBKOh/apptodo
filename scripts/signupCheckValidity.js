@@ -811,6 +811,37 @@
                     }
                 )
         }
+        //----------------------
         buttonSubmitRef.addEventListener('click', (event) => manterClicado(event))
 
+    //Visualizando o valor dos campos de Senha clicando no ícone de olho
+    const eyeSeeSingupType = document.getElementById('eyeSenha1');
+    eyeSeeSingupType.addEventListener('click', () => {
+
+        if(senhaInputRef.getAttribute('type') === 'password'){
+            senhaInputRef.setAttribute('type', 'text');
+            eyeSeeSingupType.setAttribute('src', '../assets/eye.svg');
+        }
+        else if(senhaInputRef.getAttribute('type') === 'text'){
+            senhaInputRef.setAttribute('type', 'password');    
+            eyeSeeSingupType.setAttribute('src', '../assets/eye-off.svg');
+        } 
+    });
+
+    //Visualizando o valor dos campos de Repetir Senha clicando no ícone de olho
+    const eyeSeeSingupReType = document.getElementById('eyeSenha2');
+    eyeSeeSingupReType.addEventListener('click', () => {
+
+        if(repetirSenhaInputRef.getAttribute('type') === 'password'){
+            repetirSenhaInputRef.setAttribute('type', 'text');
+            eyeSeeSingupReType.setAttribute('src', '../assets/eye.svg');
+        }
+        else if(repetirSenhaInputRef.getAttribute('type') === 'text'){
+            repetirSenhaInputRef.setAttribute('type', 'password');    
+            eyeSeeSingupReType.setAttribute('src', '../assets/eye-off.svg');
+        } 
+    });
+
+
 // ----- #6 FIM ----- 
+

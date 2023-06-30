@@ -60,6 +60,7 @@
       </label>
       <label class="form-control" id="formControlSenha">
         Senha:
+        <div id="eyeSenhaHolder1">
         <input
         type="password"
         name="password"
@@ -67,11 +68,13 @@
         required
         minlength="8"
         >
-        <span class="lnr lnr-eye"></span>
+        <img src="../assets/eye-off.svg" id="eyeSenha1">
+      </div>
         <small>Preencha o campo com no mínimo 8 caracteres</small>
       </label>
       <label class="form-control" id="formControlRepetirSenha">
         Repetir senha:
+        <div id="eyeSenhaHolder1">
         <input
         disabled
         type="password"
@@ -80,7 +83,8 @@
         required
         minlength="8"
         >
-        <span class="lnr lnr-eye"></span>
+        <img src="../assets/eye-off.svg" id="eyeSenha2">
+      </div>
         <small>As senhas não coincidem</small>
       </label>
       <button id="buttonSubmit" class="button-submit" disabled>Criar conta</button>

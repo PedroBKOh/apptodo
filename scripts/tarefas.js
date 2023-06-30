@@ -641,7 +641,7 @@
                         {
                             localStorage.setItem('user', JSON.stringify(user))
                             const userNameRef = document.getElementById('userName')
-                            userNameRef.innerText = `${user.firstName} ${user.lastName}` 
+                            userNameRef.innerText = `Olá, ${user.firstName} ${user.lastName}` 
                         }
                     )
                 } 
@@ -706,13 +706,13 @@
             openTasksListRef.innerHTML += `
                 <li class="tarefa">
                     <div class="not-done"></div>
-                    <div class="descricao">
+                    <div class="descricao" autocomplete="off">
                         <p class="nome">${task.description}</p> 
                         <!--<p class="id">#${task.id}</p> <!--------------------------Mudar para um id proprio de num de tarefas (ref)----->
                         <p class="timestamp">Criada em: ${taskDateFormated}</p>
                         <div class="check-box">
-                        <input type="radio" id="css" class="radio">
-                          <label for="css" class="label">Excluir</label>
+                            <input type="radio" id="css" class="radio">
+                            <label for="css" class="label">Excluir</label>
                         </div>
                     </div>
                 </li>
@@ -860,7 +860,6 @@ function notCompleteTask(task) {
         }
     }
 
-
 // Referencia da Lista de Tarefas Concluidas e leva de volta para as tarefas Incompletas
     const closeTasksListRef = document.querySelector('#closeTasksList')
 
@@ -888,13 +887,13 @@ function notCompleteTask(task) {
             closeTasksListRef.innerHTML += `
                 <li class="tarefa2">
                     <div class="not-done2"></div>
-                    <div class="descricao2">
+                    <div class="descricao2" autocomplete="off">
                         <p class="nome">${task.description}</p> 
                         <!--<p class="id2">#${task.id}</p> <!--------------------------Mudar para um id proprio de num de tarefas (ref)----->
                         <p class="timestamp2">Criada em: ${taskDateFormated}</p>
                         <div class="check-box2">
-                        <input type="radio" id="css2" class="radio2">
-                        <label for="css" class="label2">Excluir</label>
+                            <input type="radio" id="css2" class="radio2">
+                            <label for="css" class="label2">Excluir</label>
                         </div>
                     </div>
                 </li>
