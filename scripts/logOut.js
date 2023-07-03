@@ -11,5 +11,5 @@
     }
 
 // Função do botão Log Out
-    const logOutButtonRef = document.querySelector('#logOutButton')
-    logOutButtonRef.addEventListener('click', () => logOut())
+const logOutButtonRef = document.querySelector('#logOutButton')
+logOutButtonRef.addEventListener('click', () => logOut())

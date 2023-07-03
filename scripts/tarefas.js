@@ -575,6 +575,7 @@
 
 // Variavel responsavel por armazenar a URL Base para nossa API
     const apiBaseUrl = 'https://todo-api.ctd.academy/v1'
+    // import {apiBaseUrl} from "./utils.js"
 
 // Token obtido no Login que foi salvo no localStorage
     const jwt = localStorage.getItem('jwt')
@@ -595,30 +596,30 @@
         closeds: [] // Array utilizado para armazenar as nossas tarefas concluidas
     }
 
-// // Função que deleta as tarefas ---------------------------------- Provisório!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//     const deleteTaskButtonRef = document.getElementById('not-done2')
+                                    // Função que deleta as tarefas ---------------------------------- Provisório!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                                        const deleteTaskButtonRef = document.getElementById('not-done2')
 
-//     function deleteTask(task) {
-//         let taskCompleted = task
-//         // console.log(taskCompleted)
-//         taskCompleted.completed = true
-//         // console.log(taskCompleted)
-//         const requestSettings = {
-//             method: 'DELETE',
-//             body: JSON.stringify(taskCompleted),
-//             headers: requestHeadersAuth
-//         }
-//         fetch(`${apiBaseUrl}/tasks/${task.id}`, requestSettings).then(
-//             response => {
-//                 if(response.ok) {
-//                     getTasks()
-//                 }
-//             }
-//         )
-//     }
+                                        function deleteTask(task) {
+                                            let taskCompleted = task
+                                            // console.log(taskCompleted)
+                                            taskCompleted.completed = true
+                                            // console.log(taskCompleted)
+                                            const requestSettings = {
+                                                method: 'DELETE',
+                                                body: JSON.stringify(taskCompleted),
+                                                headers: requestHeadersAuth
+                                            }
+                                            fetch(`${apiBaseUrl}/tasks/${task.id}`, requestSettings).then(
+                                                response => {
+                                                    if(response.ok) {
+                                                        getTasks()
+                                                    }
+                                                }
+                                            )
+                                        }
 
-// // ----------------
-//     // deleteTaskButtonRef.addEventListener('click', () => deleteTask(task))    
+                                    // ----------------
+                                        // deleteTaskButtonRef.addEventListener('click', () => deleteTask(task))    
 
 // Função pega o nome e sobrenome do usuario e mostra na tela de tarefas.
     function getUser() {
@@ -746,49 +747,49 @@
 
 
 // Função que deleta as tarefas ---------------------------------- Provisório!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    // const deleteTaskButtonRef = document.getElementById('not-done2')
+//     const deleteTaskButtonRef = document.getElementById('not-done2')
 
-    function deleteTask(task) {
-        let taskCompleted = task
-        // console.log(taskCompleted)
-        taskCompleted.completed = true
-        // console.log(taskCompleted)
-        const requestSettings = {
-            method: 'DELETE',
-            body: JSON.stringify(taskCompleted),
-            headers: requestHeadersAuth
-        }
-        fetch(`${apiBaseUrl}/tasks/${task.id}`, requestSettings).then(
-            response => {
-                if(response.ok) {
-                    getTasks()
-                }
-            }
-        )
-    }    
+//                                             function deleteTask(task) {
+//                                                 let taskCompleted = task
+//                                                 // console.log(taskCompleted)
+//                                                 taskCompleted.completed = true
+//                                                 // console.log(taskCompleted)
+//                                                 const requestSettings = {
+//                                                     method: 'DELETE',
+//                                                     body: JSON.stringify(taskCompleted),
+//                                                     headers: requestHeadersAuth
+//                                                 }
+//                                                 fetch(`${apiBaseUrl}/tasks/${task.id}`, requestSettings).then(
+//                                                     response => {
+//                                                         if(response.ok) {
+//                                                             getTasks()
+//                                                         }
+//                                                     }
+//                                                 )
+//                                             }    
 
-// ----------------
+// // ----------------
     // deleteTaskButtonRef.addEventListener('click', () => deleteTask(task))    
 
-// Função modifica a tarefa para ABERTA
-function notCompleteTask(task) {
-    let taskNotCompleted = task
-    // console.log(taskCompleted)
-    taskNotCompleted.completed = false
-    // console.log(taskCompleted)
-    const requestSettings = {
-        method: 'PUT',
-        body: JSON.stringify(taskNotCompleted),
-        headers: requestHeadersAuth
-    }
-    fetch(`${apiBaseUrl}/tasks/${task.id}`, requestSettings).then(
-        response => {
-            if(response.ok) {
-                getTasks()
-            }
-        }
-    )
-}
+                                            // // Função modifica a tarefa para ABERTA
+                                            // function notCompleteTask(task) {
+                                            //     let taskNotCompleted = task
+                                            //     // console.log(taskCompleted)
+                                            //     taskNotCompleted.completed = false
+                                            //     // console.log(taskCompleted)
+                                            //     const requestSettings = {
+                                            //         method: 'PUT',
+                                            //         body: JSON.stringify(taskNotCompleted),
+                                            //         headers: requestHeadersAuth
+                                            //     }
+                                            //     fetch(`${apiBaseUrl}/tasks/${task.id}`, requestSettings).then(
+                                            //         response => {
+                                            //             if(response.ok) {
+                                            //                 getTasks()
+                                            //             }
+                                            //         }
+                                            //     )
+                                            // }
 
 //COPIA DO DE BAIXO QUE DELETA COMO OS INPITS DO LADO ESQUERDO
 // // Referencia da Lista de Tarefas Concluidas ---- BOTÃO DELETAR!!!!
@@ -819,35 +820,35 @@ function notCompleteTask(task) {
 // }
 
 
-                                // // Referencia da Lista de Tarefas Concluidas ---- BOTÃO DELETAR!!!!
-                                // const closeTasksListRef = document.querySelector('#closeTasksList')
+                                // Referencia da Lista de Tarefas Concluidas ---- BOTÃO DELETAR!!!!
+                                const closeTasksListRef = document.querySelector('#closeTasksList')
 
-                                // function addEventListenersToTasksCloseds() {
-                                //     const closeTaskListItensRef = Array.from(closeTasksListRef.children)
-                                //     closeTaskListItensRef.map(
-                                //         (item, index) => {
-                                //             const closeActionItemTaskRef = item.children[0]
-                                //             const taskFinded2 = userTasks.closeds[index]
-                                //             // closeActionItemTaskRef.addEventListener('click', () => deleteTask(taskFinded2)) COPIA COM FUNÇÃO DELETE DIRETO.
-                                //             closeActionItemTaskRef.addEventListener('click', () => confirmDelete())
-                                //             console.log(closeActionItemTaskRef.addEventListener)
+                                function addEventListenersToTasksCloseds() {
+                                    const closeTaskListItensRef = Array.from(closeTasksListRef.children)
+                                    closeTaskListItensRef.map(
+                                        (item, index) => {
+                                            const closeActionItemTaskRef = item.children[0]
+                                            const taskFinded2 = userTasks.closeds[index]
+                                            // closeActionItemTaskRef.addEventListener('click', () => deleteTask(taskFinded2)) COPIA COM FUNÇÃO DELETE DIRETO.
+                                            closeActionItemTaskRef.addEventListener('click', () => confirmDelete())
+                                            console.log(closeActionItemTaskRef.addEventListener)
 
-                                //             function confirmDelete() 
-                                //             {
-                                //                 const confirmText = 'Deseja realmente excluir a tarefa?';
-                                //                 if (confirm(confirmText) == true) 
-                                //                 {
-                                //                     deleteTask(taskFinded2)
-                                //                 } 
-                                //                 else 
-                                //                 {
-                                //                 }
-                                //             }
-                                //         }
-                                //     )
-                                // }
+                                            function confirmDelete() 
+                                            {
+                                                const confirmText = 'Deseja realmente excluir a tarefa?';
+                                                if (confirm(confirmText) == true) 
+                                                {
+                                                    deleteTask(taskFinded2)
+                                                } 
+                                                else 
+                                                {
+                                                }
+                                            }
+                                        }
+                                    )
+                                }
 
-// //-----------
+//-----------
     function confirmDelete() 
     {
         const confirmText = 'Deseja realmente excluir a tarefa?';
@@ -860,19 +861,19 @@ function notCompleteTask(task) {
         }
     }
 
-// Referencia da Lista de Tarefas Concluidas e leva de volta para as tarefas Incompletas
-    const closeTasksListRef = document.querySelector('#closeTasksList')
+// // Referencia da Lista de Tarefas Concluidas e leva de volta para as tarefas Incompletas
+//     const closeTasksListRef = document.querySelector('#closeTasksList')
 
-    function addEventListenersToTasksCloseds() {
-        const closeTaskListItensRef = Array.from(closeTasksListRef.children)
-        closeTaskListItensRef.map(
-            (item, index) => {
-                const closeActionItemTaskRef = item.children[0]
-                const taskFinded2 = userTasks.closeds[index]
-                closeActionItemTaskRef.addEventListener('click', () => notCompleteTask(taskFinded2))
-            }
-        )
-    }
+//     function addEventListenersToTasksCloseds() {
+//         const closeTaskListItensRef = Array.from(closeTasksListRef.children)
+//         closeTaskListItensRef.map(
+//             (item, index) => {
+//                 const closeActionItemTaskRef = item.children[0]
+//                 const taskFinded2 = userTasks.closeds[index]
+//                 closeActionItemTaskRef.addEventListener('click', () => notCompleteTask(taskFinded2))
+//             }
+//         )
+//     }
 
 // Funcao que ira inserir as nossas Tasks no HTML
     function insertClosedsTasksHtml() {

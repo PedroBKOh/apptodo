@@ -638,11 +638,15 @@
 
 // // ----- #5 FIM ----- 
 
+
+
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//
 
 // ----- Forma Refatorado 3 ----- #6 INICIO
     // Variáveis globais
         const apiBaseUrl = 'https://todo-api.ctd.academy/v1'
+        // import {apiBaseUrl} from "./utils.js"
+
         const nomeInputRef = document.querySelector('#nomeInput')
         const sobrenomeInputRef = document.querySelector('#sobrenomeInput')
         const emailInputRef = document.querySelector('#emailInput')
@@ -783,29 +787,37 @@
         repetirSenhaInputRef.addEventListener('keyup', (event) => validateRepetirSenha(event))
 
     // Função fixa o botão após click inserindo class CSS. // Adicionado parte do código para singup via API.
-        function manterClicado(event) {
+        function manterClicado(event) 
+        {
             event.preventDefault()
             buttonSubmitRef.classList.add('active')
 
-                const requestHeaders = {
+                const requestHeaders = 
+                {
                     "Accept": "application/json",
                     "Content-Type": "application/json"
                 }
             
-                const requestSettings = {
+                const requestSettings = 
+                {
                     method: 'POST',
                     body: JSON.stringify(user),
                     headers: requestHeaders
                 }
 
-            console.log(JSON.stringify(user))
-                fetch(`${apiBaseUrl}/users`, requestSettings).then(
-                    response => {
+                console.log(JSON.stringify(user))
+                fetch(`${apiBaseUrl}/users`, requestSettings).then
+                (
+                    response => 
+                    {
                         console.log(response)
-                        if(response.ok) {
+                        if(response.ok) 
+                        {
                             alert('usuario cadastrado com sucesso')
                             window.location.href="../index.html"
-                        } else {
+                        } 
+                        else 
+                        {
                             alert('esse e-mail ja foi cadastrado')
                         }
                     }
@@ -830,13 +842,16 @@
 
     //Visualizando o valor dos campos de Repetir Senha clicando no ícone de olho
     const eyeSeeSingupReType = document.getElementById('eyeSenha2');
-    eyeSeeSingupReType.addEventListener('click', () => {
+    eyeSeeSingupReType.addEventListener('click', () => 
+    {
 
-        if(repetirSenhaInputRef.getAttribute('type') === 'password'){
+        if(repetirSenhaInputRef.getAttribute('type') === 'password')
+        {
             repetirSenhaInputRef.setAttribute('type', 'text');
             eyeSeeSingupReType.setAttribute('src', '../assets/eye.svg');
         }
-        else if(repetirSenhaInputRef.getAttribute('type') === 'text'){
+        else if(repetirSenhaInputRef.getAttribute('type') === 'text')
+        {
             repetirSenhaInputRef.setAttribute('type', 'password');    
             eyeSeeSingupReType.setAttribute('src', '../assets/eye-off.svg');
         } 

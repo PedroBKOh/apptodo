@@ -33,7 +33,7 @@ header {
   border-radius: 50%;
   background-color: none;
   position: relative;
-  /* opacity: .4; */ */
+  /* opacity: .4; */
   margin-left: .7em;
   padding-left: 2em;
 }
@@ -399,14 +399,14 @@ header {
 }
 
 .check-box2 {
-  text-decoration: none);
+  text-decoration: none;
 
 }
 
 
 
 .check-box .radio {
-  text-decoration: none);
+  text-decoration: none;
 
 }
 
@@ -415,8 +415,7 @@ header {
 }
 
 div .check-box2{
-  text-decoration:none;
-
+text-decoration:none;
 }
 
 /* ----------- FIM */

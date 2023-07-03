@@ -76,6 +76,7 @@ button {
   font-size: 2em;
 
 }
+
 .ingressar{
   text-align: center;
 }
@@ -129,6 +130,7 @@ color: blue;
 
 .valid input {
   color: blue;
+  border-color: blue;
 }
 
 .validSenhas input {
@@ -188,6 +190,11 @@ button:disabled {
   cursor: pointer;
   width: 13px;
   opacity: .5;
+ }
+
+ .tituloFooter {
+  color: blue;
+  
  }
 
 /* --------- Pedro Oh -------------FIM*/

@@ -97,6 +97,56 @@
 
     // Variáveis globais
         const apiBaseUrl = 'https://todo-api.ctd.academy/v1'
+        // import {apiBaseUrl} from "./utils.js"
+
+
+
+        //------------------exemplo
+        // const xxxRef = document.querySelector('#xxx') 
+        // const userx = {
+        //     nomex: 'Airton',
+        //     sobrenomex: 'Robson'
+        // }
+        // xxxRef.innerText = `Olá, ${userx.nomex} ${userx.sobrenomex}`
+
+        // const zzzRef = document.querySelector('#xxx') 
+        // zzzRef.innerHTML = 
+        // `
+        // <footer class="right">
+        //     <p class="tituloFooter">DH - Front End II - Turma 2</p>
+        //     <p class="textoFooter">${} / ${} / Airton / Maykon / Carina</p>
+        //     <small>Check Point II | 2023</small>
+        // </footer>
+
+        // `
+
+
+        // const zzzRef = document.querySelector('#xxx') 
+        // zzzRef.innerHTML = 
+        // `
+        // <footer class="right">
+        //     <p class="tituloFooter">DH - Front End II - Turma 2</p>
+        //     <p class="textoFooter">${} / ${} / Airton / Maykon / Carina</p>
+        //     <small>Check Point II | 2023</small>
+        // </footer>
+
+        // `
+        // const btn = document.createElement("div");
+        // btn.innerHTML =  `
+        // <footer class="right">
+        //     <p class="tituloFooter">DH - Front End II - Turma 2</p>
+        //     <p class="textoFooter">${} / ${} / Airton / Maykon / Carina</p>
+        //     <small>Check Point II | 2023</small>
+        // </footer>
+
+        // `
+        // document.body.appendChild(btn);
+
+        // function zzz() {
+
+        // } 
+        
+        //------------------exemplo
 
         const emailInputLoginRef = document.querySelector('#emailInputLogin')
         const senhaInputLoginRef = document.querySelector('#senhaInputLogin')
@@ -188,7 +238,6 @@
                             security => {
                                 localStorage.setItem('jwt', security.jwt)
                                 window.location.href = './pages/tarefas.html'
-                                
                             }
                         )
                     } else {
@@ -215,4 +264,7 @@
             } 
         });
 
+    
+
 // ----- #2 FIM ----- 
+
