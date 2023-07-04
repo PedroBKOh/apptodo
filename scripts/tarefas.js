@@ -989,6 +989,8 @@
             // Toda vez que fazemos uma requisicao para criarmos uma nova tarefa, ela no final das contas é criada no Banco de Dados, porem, 
             //a listagem que esta sendo mostrada para o usuario nao contem essa nova tarefa criada. Por isso que precisamos obter as tarefas novamente
             getTasks()
+            newTaskButtontRef.disabled = true
+
         }
         // Limpa o campo do formulario após click do botão.
         novaTarefaRef.value = ""
