@@ -97,6 +97,16 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+.right footer{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
 }
 
 /* --------- Pedro Oh -------------INICIO*/
@@ -194,9 +204,29 @@ button:disabled {
 
  .tituloFooter {
   color: blue;
-  
+  }
+
+
+ footer {
+  align-items: center;
+  padding: 10px;
  }
 
+ .textoFooter {
+  margin: 10px;
+ }
+
+ .tituloFooter {
+  font-size: 20px;
+ }
+
+ button #btnTrashTask .button-trash {
+  border: none;
+ }
+
+ img #imgTrash {
+ }
 /* --------- Pedro Oh -------------FIM*/
 
 
+ 

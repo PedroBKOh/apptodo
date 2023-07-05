@@ -564,9 +564,9 @@
 
 // Importando Função
     // Obtem a função de logOut.
-    import {logOut} from './logOut.js'  
+    import {logOut} from '../logOut.js'  
     // Função que mostra o contador
-    import {taskCounterOpeneds} from './utils.js'  
+    import {taskCounterOpeneds} from '../utils.js'  
     // import {taskCounterCloseds} from './utils.js'  
 
 //Exportando Função
@@ -596,34 +596,6 @@
         closeds: [] // Array utilizado para armazenar as nossas tarefas concluidas
     }
 
-
-// função abre janela
-var btnOpenRef = document.getElementById('avatar')
-
-
-let myWindow;
-
-function openWin() {
-  myWindow = window.open("../pages/user.html", "width=50,height=50", "width=500,height=500")
-// localStorage.setItem('userWindow', JSON.stringify(myWindow))
-}
-
-
-btnOpenRef.addEventListener('click', () => openWin())
-
-
-
-
-// function closeHandler() {
-//     Enabler.reportManualClose(); 
-//     Enabler.close();
-//   }
-  
-//   document.getElementById('btnClose').addEventListener('click', closeHandler, false);
-
-
-
-//*---------------------1função delete precisa dele------------------
                                     // Função que deleta as tarefas ---------------------------------- Provisório!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                                         const deleteTaskButtonRef = document.getElementById('not-done2')
 
@@ -631,7 +603,7 @@ btnOpenRef.addEventListener('click', () => openWin())
                                             let taskCompleted = task
                                             // console.log(taskCompleted)
                                             taskCompleted.completed = true
-                                            console.log(taskCompleted)
+                                            // console.log(taskCompleted)
                                             const requestSettings = {
                                                 method: 'DELETE',
                                                 body: JSON.stringify(taskCompleted),
@@ -648,8 +620,6 @@ btnOpenRef.addEventListener('click', () => openWin())
 
                                     // ----------------
                                         // deleteTaskButtonRef.addEventListener('click', () => deleteTask(task))    
-//*---------------------1 ------------------
-
 
 // Função pega o nome e sobrenome do usuario e mostra na tela de tarefas.
     function getUser() {
@@ -704,13 +674,6 @@ btnOpenRef.addEventListener('click', () => openWin())
         fetch(`${apiBaseUrl}/tasks/${task.id}`, requestSettings).then(
             response => {
                 if(response.ok) {
-                    Swal.fire({
-                        position: 'top-end',
-                        icon: 'success',
-                        title: 'Solicitação efetuada com sucesso!',
-                        showConfirmButton: false,
-                        timer: 1000
-                      })
                     getTasks()
                 }
             }
@@ -726,33 +689,7 @@ btnOpenRef.addEventListener('click', () => openWin())
             (item, index) => {
                 const actionItemTaskRef = item.children[0]
                 const taskFinded = userTasks.openeds[index]
-                const btnTrashRef = item.children[1].children[2]
-                btnTrashRef.addEventListener('click', () => confirmDelete())
                 actionItemTaskRef.addEventListener('click', () => completeTask(taskFinded))
-
-                function confirmDelete() 
-                                            {
-                                                Swal.fire({
-                                                    title: 'Deseja excluir a tarefa?',
-                                                    text: "Esta ação não pode ser desfeita!",
-                                                    icon: 'warning',
-                                                    showCancelButton: true,
-                                                    confirmButtonColor: '#ff0000',
-                                                    cancelButtonColor: '#a5a5a5',
-                                                    confirmButtonText: 'Sim! Excluir.'
-                                                  }).then((result) => {
-                                                    if (result.isConfirmed) {
-
-                                                        deleteTask(taskFinded)
-
-                                                      Swal.fire(
-                                                        'Excluido!',
-                                                        'Solicitação executada com sucesso!',
-                                                        'success'
-                                                      )
-                                                    }
-                                                  })
-                                            }
             }
         )
     }
@@ -762,10 +699,6 @@ btnOpenRef.addEventListener('click', () => openWin())
         // Remocao de todos os elementos dentro da Lista de Tarefas em Aberto
         openTasksListRef.innerHTML = ''
         // For nas tarefas para inseri-las no HTML
-        if (userTasks.openeds.length === 0){
-            openTasksListRef.innerHTML = 'Sem tarefas para exibir!'
-
-        } else {
         for(let task of userTasks.openeds) {
             // Criacao de uma data baseada na string retornada da API
             const taskDate = new Date(task.createdAt)
@@ -778,15 +711,16 @@ btnOpenRef.addEventListener('click', () => openWin())
                         <p class="nome">${task.description}</p> 
                         <!--<p class="id">#${task.id}</p> <!--------------------------Mudar para um id proprio de num de tarefas (ref)----->
                         <p class="timestamp">Criada em: ${taskDateFormated}</p>
-                        <button type="submit" id="btnTrashTask" class="button-trash">
-                        <img src="../assets/trash.PNG" width="15px" alt="Adicionar uma nova tarefa" id="imgTrash">
-                      </button>
+                        <div class="check-box">
+                            <input type="radio" id="css" class="radio">
+                            <label for="css" class="label">Excluir</label>
+                        </div>
                     </div>
                 </li>
             `
         }
         addEventListenersToTasksOpeneds()
-    }}
+    }
     
 // COPIA DO DE BAIXO FUNCIONANDO O DELETE DO INPUT DO LADO ESQUERDO
 // // Função que deleta as tarefas ---------------------------------- Provisório!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -837,37 +771,25 @@ btnOpenRef.addEventListener('click', () => openWin())
 // // ----------------
     // deleteTaskButtonRef.addEventListener('click', () => deleteTask(task))    
 
-// ---------------------- 2 ---------------------------- função
-
-                                            // Função modifica a tarefa para ABERTA
-                                            function notCompleteTask(task) {
-                                                let taskNotCompleted = task
-                                                // console.log(taskCompleted)
-                                                taskNotCompleted.completed = false
-                                                // console.log(taskCompleted)
-                                                const requestSettings = {
-                                                    method: 'PUT',
-                                                    body: JSON.stringify(taskNotCompleted),
-                                                    headers: requestHeadersAuth
-                                                }
-                                                fetch(`${apiBaseUrl}/tasks/${task.id}`, requestSettings).then(
-                                                    response => {
-                                                        if(response.ok) {
-                                                            Swal.fire({
-                                                                position: 'top-end',
-                                                                icon: 'success',
-                                                                title: 'Solicitação efetuada com sucesso!',
-                                                                showConfirmButton: false,
-                                                                timer: 1000
-                                                              })
-
-                                                            getTasks()
-                                                        }
-                                                    }
-                                                )
-                                            }
-
-//------------------------- 2 ---------------------
+                                            // // Função modifica a tarefa para ABERTA
+                                            // function notCompleteTask(task) {
+                                            //     let taskNotCompleted = task
+                                            //     // console.log(taskCompleted)
+                                            //     taskNotCompleted.completed = false
+                                            //     // console.log(taskCompleted)
+                                            //     const requestSettings = {
+                                            //         method: 'PUT',
+                                            //         body: JSON.stringify(taskNotCompleted),
+                                            //         headers: requestHeadersAuth
+                                            //     }
+                                            //     fetch(`${apiBaseUrl}/tasks/${task.id}`, requestSettings).then(
+                                            //         response => {
+                                            //             if(response.ok) {
+                                            //                 getTasks()
+                                            //             }
+                                            //         }
+                                            //     )
+                                            // }
 
 //COPIA DO DE BAIXO QUE DELETA COMO OS INPITS DO LADO ESQUERDO
 // // Referencia da Lista de Tarefas Concluidas ---- BOTÃO DELETAR!!!!
@@ -898,68 +820,46 @@ btnOpenRef.addEventListener('click', () => openWin())
 // }
 
 
+                                // Referencia da Lista de Tarefas Concluidas ---- BOTÃO DELETAR!!!!
+                                const closeTasksListRef = document.querySelector('#closeTasksList')
 
+                                function addEventListenersToTasksCloseds() {
+                                    const closeTaskListItensRef = Array.from(closeTasksListRef.children)
+                                    closeTaskListItensRef.map(
+                                        (item, index) => {
+                                            const closeActionItemTaskRef = item.children[0]
+                                            const taskFinded2 = userTasks.closeds[index]
+                                            // closeActionItemTaskRef.addEventListener('click', () => deleteTask(taskFinded2)) COPIA COM FUNÇÃO DELETE DIRETO.
+                                            closeActionItemTaskRef.addEventListener('click', () => confirmDelete())
+                                            console.log(closeActionItemTaskRef.addEventListener)
 
-//*-------------teste 1------------ ok (mudou para o trash )
-// // BOTÃO VERMELHO ESQUERDO! ---> ATIVO
-//                                 // Referencia da Lista de Tarefas Concluidas ---- BOTÃO DELETAR!!!!
-//                                 const closeTasksListRef = document.querySelector('#closeTasksList')
+                                            function confirmDelete() 
+                                            {
+                                                const confirmText = 'Deseja realmente excluir a tarefa?';
+                                                if (confirm(confirmText) == true) 
+                                                {
+                                                    deleteTask(taskFinded2)
+                                                } 
+                                                else 
+                                                {
+                                                }
+                                            }
+                                        }
+                                    )
+                                }
 
-//                                 function addEventListenersToTasksCloseds() {
-//                                     const closeTaskListItensRef = Array.from(closeTasksListRef.children)
-//                                     closeTaskListItensRef.map(
-//                                         (item, index) => {
-//                                             const closeActionItemTaskRef = item.children[0]
-//                                             const taskFinded2 = userTasks.closeds[index]
-//                                             // closeActionItemTaskRef.addEventListener('click', () => deleteTask(taskFinded2)) COPIA COM FUNÇÃO DELETE DIRETO.
-//                                             closeActionItemTaskRef.addEventListener('click', () => confirmDelete())
-//                                             console.log(closeActionItemTaskRef.addEventListener)
-
-//                                             function confirmDelete() 
-//                                             {
-//                                                 Swal.fire({
-//                                                     title: 'Deseja excluir a tarefa?',
-//                                                     text: "Esta ação não pode ser desfeita!",
-//                                                     icon: 'warning',
-//                                                     showCancelButton: true,
-//                                                     confirmButtonColor: '#ff0000',
-//                                                     cancelButtonColor: '#a5a5a5',
-//                                                     confirmButtonText: 'Sim! Excluir.'
-//                                                   }).then((result) => {
-//                                                     if (result.isConfirmed) {
-
-//                                                         deleteTask(taskFinded2)
-
-//                                                       Swal.fire(
-//                                                         'Excluido!',
-//                                                         'Solicitação executada com sucesso!',
-//                                                         'success'
-//                                                       )
-//                                                     }
-//                                                   })
-//                                             }
-//                                         }
-//                                     )
-//                                 }
-
-//*-------------teste 1------------
-
-// SUBSTITUIDO POR SWEET ALERT 836-858
-                                // function confirmDelete() 
-                                // {
-                                //     const confirmText = 'Deseja realmente excluir a tarefa?';
-                                //     if (confirm(confirmText) == true) 
-                                //     {
-                                //         deleteTask(taskFinded2)
-                                //     } 
-                                //     else 
-                                //     {
-                                //     }
-                                // }
-
-
-
-//*-----------------------------------2 ------------------------------------
+//-----------
+    function confirmDelete() 
+    {
+        const confirmText = 'Deseja realmente excluir a tarefa?';
+        if (confirm(confirmText) == true) 
+        {
+            deleteTask(taskFinded2)
+        } 
+        else 
+        {
+        }
+    }
 
 // // Referencia da Lista de Tarefas Concluidas e leva de volta para as tarefas Incompletas
 //     const closeTasksListRef = document.querySelector('#closeTasksList')
@@ -975,17 +875,11 @@ btnOpenRef.addEventListener('click', () => openWin())
 //         )
 //     }
 
-//-------------------------2--------------------------------
-
 // Funcao que ira inserir as nossas Tasks no HTML
     function insertClosedsTasksHtml() {
         // Remocao de todos os elementos dentro da Lista de Tarefas em Aberto
         closeTasksListRef.innerHTML = ''
         // For nas tarefas para inseri-las no HTML
-        if (userTasks.closeds.length === 0){
-            closeTasksListRef.innerHTML = 'Sem tarefas para exibir!'
-
-        } else {
         for(let task of userTasks.closeds) {
             // Criacao de uma data baseada na string retornada da API
             const taskDate = new Date(task.createdAt)
@@ -993,79 +887,22 @@ btnOpenRef.addEventListener('click', () => openWin())
             const taskDateFormated = new Intl.DateTimeFormat('pt-BR').format(taskDate)
             closeTasksListRef.innerHTML += `
                 <li class="tarefa2">
-
                     <div class="not-done2"></div>
-
                     <div class="descricao2" autocomplete="off">
                         <p class="nome">${task.description}</p> 
                         <!--<p class="id2">#${task.id}</p> <!--------------------------Mudar para um id proprio de num de tarefas (ref)----->
                         <p class="timestamp2">Criada em: ${taskDateFormated}</p>
-                        <button type="submit" id="btnTrashTask" class="button-trash">
-                        <img src="../assets/trash.PNG" width="15px" alt="Adicionar uma nova tarefa" id="imgTrash">
-                      </button>
+                        <div class="check-box2">
+                            <input type="radio" id="css2" class="radio2">
+                            <label for="css" class="label2">Excluir</label>
+                        </div>
                     </div>
-
                 </li>
             `
         }
-    }
         //-------------
         addEventListenersToTasksCloseds()
     }
-
-
-//*----------------1-----------
-
-// BOTÃO VERMELHO ESQUERDO! ---> ATIVO
-                                // Referencia da Lista de Tarefas Concluidas ---- BOTÃO DELETAR!!!!
-                                const closeTasksListRef = document.querySelector('#closeTasksList')
-
-                                function addEventListenersToTasksCloseds() {
-                                    const closeTaskListItensRef = Array.from(closeTasksListRef.children)
-                                    closeTaskListItensRef.map(
-                                        (item, index) => 
-                                        {
-                                            const closeActionItemTaskRef = item.children[0]
-                                            const taskFinded2 = userTasks.closeds[index]
-                                            const btnTrashRef = item.children[1].children[2]
-                                            btnTrashRef.addEventListener('click', () => confirmDelete())
-                                            console.log(btnTrashRef.addEventListener)
-                                            closeActionItemTaskRef.addEventListener('click', () => notCompleteTask(taskFinded2))
-
-
-                                            function confirmDelete() 
-                                            {
-                                                Swal.fire({
-                                                    title: 'Deseja excluir a tarefa?',
-                                                    text: "Esta ação não pode ser desfeita!",
-                                                    icon: 'warning',
-                                                    showCancelButton: true,
-                                                    confirmButtonColor: '#ff0000',
-                                                    cancelButtonColor: '#a5a5a5',
-                                                    confirmButtonText: 'Sim! Excluir.'
-                                                  }).then((result) => {
-                                                    if (result.isConfirmed) {
-
-                                                        deleteTask(taskFinded2)
-
-                                                      Swal.fire(
-                                                        'Excluido!',
-                                                        'Solicitação executada com sucesso!',
-                                                        'success'
-                                                      )
-                                                    }
-                                                  })
-                                            }
-                                        }
-                                    )
-                                }
-
-
-
-//*----------------fim 1---------------
-
-
-
 
 //----------------- DOCUMENTAR-------------------!!!!!!!!!!!!
     function checkTasks(tasks) {
@@ -1126,7 +963,6 @@ btnOpenRef.addEventListener('click', () => openWin())
     async function createTask(event) {
         // Utilizacao do preventDefault() para a pagina nao recarregar apos o Submit
         event.preventDefault()
-
         const novaTarefaRef = document.getElementById('novaTarefa')
         // Objeto contendo a Task que sera Cadastrada
         const task = {
@@ -1148,14 +984,6 @@ btnOpenRef.addEventListener('click', () => openWin())
         const response = await fetch(`${apiBaseUrl}/tasks`, requestSettings)
         // Verificacao se deu tudo certo com a Request
         if(response.ok) {
-
-            Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: 'Tarefa criada com sucesso!',
-                showConfirmButton: false,
-                timer: 1000
-              })
             // Caso tenha dado tudo certo nos executamos a funcao getTasks() novamente
             // A ideia de executarmos novamente a getTasks() esta em "remontarmos as listas pata o usuario"
             // Toda vez que fazemos uma requisicao para criarmos uma nova tarefa, ela no final das contas é criada no Banco de Dados, porem, 
@@ -1173,7 +1001,7 @@ btnOpenRef.addEventListener('click', () => openWin())
         // Verifica se o JWT obtido do localStorage é nulo
         if(jwt === null) {
             // Caso seja a aplicacao ja realiza o Logout do Usuario
-            logOut(true)
+            logOut()
         } else {
             // Caso nao seja Nulo, a aplicacao ira obter as Tasks e realizar outra verificacao quando a Request for concluida
             getTasks() 

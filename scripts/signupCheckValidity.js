@@ -783,6 +783,8 @@
         nomeInputRef.addEventListener('keyup', (event) => validateInput(event))
         sobrenomeInputRef.addEventListener('keyup', (event) => validateInput(event))
         emailInputRef.addEventListener('keyup', (event) => validateInput(event))
+        emailInputRef.addEventListener('focus', (event) => validateInput(event))
+
         senhaInputRef.addEventListener('keyup', (event) => validateSenha(event))
         repetirSenhaInputRef.addEventListener('keyup', (event) => validateRepetirSenha(event))
 
@@ -813,12 +815,27 @@
                         console.log(response)
                         if(response.ok) 
                         {
-                            alert('usuario cadastrado com sucesso')
-                            window.location.href="../index.html"
+                            Swal.fire(
+                                'Usuário cadastrado com sucesso!',
+                                'Clique em OK para continuar',
+                                'success'
+                              ).then(() =>  window.location.href="../index.html") 
+                            // alert('usuario cadastrado com sucesso')
                         } 
                         else 
                         {
-                            alert('esse e-mail ja foi cadastrado')
+                            Swal.fire(
+                                'Esse e-mail já foi cadastrado!',
+                                'Escolha outro',
+                                'error'
+                                ).then(() => {
+                                    emailInputRef.value = ''
+                                    emailInputRef.focus()
+                                    buttonSubmitRef.classList.remove('active')
+
+                                } ) 
+
+                            // alert('esse e-mail ja foi cadastrado')
                         }
                     }
                 )

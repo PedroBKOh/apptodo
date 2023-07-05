@@ -241,7 +241,11 @@
                             }
                         )
                     } else {
-                        alert('Email ou senha inválido!')
+                        Swal.fire(
+                            'E-mail ou senha inválido!',
+                            'Esqueceu? Já era!. Volta pro cadastro e faz de novo!',
+                            'error'
+                            )
                     }
                 }
             )

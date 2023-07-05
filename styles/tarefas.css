@@ -123,6 +123,8 @@ header {
   margin-right: 1em;
   opacity: .5;
   cursor: auto;
+  border: none;
+
 }
 
 .nova-tarefa button:hover {
@@ -154,6 +156,10 @@ header {
   width: 70%;
   list-style: none;
   margin: 2em 15%;
+}
+
+.tarefas-pendentes button {
+  border: none;
 }
 
 .tarefa {
@@ -191,7 +197,7 @@ header {
   width: 1.5em;
   background-color: white;
   box-shadow: 2px 2px 5px lightgrey;
-  border: 2px solid red;
+  border: 2px solid rgb(0, 0, 0);  /* muda a cor do borda task completo    */
   border-radius: 50%;
   z-index: 2;
   transition: background-color 200ms linear;
@@ -199,7 +205,7 @@ header {
 }
 
 .tarefa2 .not-done2:hover {
-  background-color: red;
+  background-color: rgb(0, 255, 0);  /* muda a cor do fundo hover task completo    */
 }
 
 .tarefa2:first-child .not-done2::before {
@@ -210,7 +216,7 @@ header {
   display: block;
   height: 3em;
   width: 2px;
-  background-color: red;
+  background-color: rgb(0, 0, 0);  /* muda a cor da linha tarefas completas*/
 }
 
 .tarefa2:not(:last-child) .not-done2::after {
@@ -221,7 +227,7 @@ header {
   display: block;
   height: 4.5em;
   width: 2px;
-  background-color: red;
+  background-color: rgb(0, 0, 0); /* muda a cor da linha tarefas completas*/
 }
 
 .tarefa2 .descricao2 {
@@ -324,6 +330,7 @@ header {
   font-size: 1.1em;
   margin-left: calc(15% - 4em);
   z-index: 20;
+  
 }
 
 .tarefas-terminadas {
@@ -332,6 +339,7 @@ header {
   width: 70%;
   list-style: none;
   margin: 2em 15%;
+  
 }
 
 .tarefas-terminadas i{
@@ -340,6 +348,8 @@ header {
 }
 .tarefas-terminadas button{
   margin-left: 10px;
+  border: none;
+  background-color: #ad939300;
 }
 
 .tarefas-terminadas .tarefa .descricao {
