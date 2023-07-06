@@ -8,24 +8,16 @@
   <!-- ----------------------------- estilos CSS ----------------------------- -->
   <link rel="stylesheet" href="../styles/tarefas.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
   <!-- ------------------- Biblioteca de icones - Fontawesome -------------------- -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-
   <!-- ----------------------------- sweet alert ----------------------------- -->
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <!-- CDN example (unpkg) -->
   <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
-
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="../scripts/tarefas.js" type="module" defer></script>
-  <script src="../scripts/utils.js" type="module" defer></script>
-  <script src="../scripts/logOut.js" type="module" defer></script>
-
-
-
   <title>App To Do</title>
 </head>
 
@@ -34,7 +26,6 @@
     <nav>
       <a href="#">Tarefas</a>
     </nav>
-
     <div class="user-info">
       <p id="userName"></p>
       <div class="user-image">
@@ -43,7 +34,6 @@
       <button id="logOutButton">Finalizar sessão</button>
     </div>
   </header>
-
   <form class="nova-tarefa">
     <div class="not-done1">
       <div class="num-tarefas" id="numTarefas"></div>
@@ -53,8 +43,6 @@
       <img src="../assets/plus.png" alt="Adicionar uma nova tarefa">
     </button>
   </form>
-
-
   <ul class="tarefas-pendentes" id="openTasksList">
     <div id="skeleton">
       </li>
@@ -65,10 +53,8 @@
           <p class="timestamp">Criada em: 15/07/21</p>
         </div>
       </li>
-
     </div>
   </ul>
-
   <h2 class="titulo-terminadas">Tarefas Concluidas</h2>
   <ul class="tarefas-terminadas" id="closeTasksList">
     <div id="skeleton">
@@ -82,7 +68,6 @@
       </li>
     </div>
   </ul>
-
 </body>
 
 </html>
