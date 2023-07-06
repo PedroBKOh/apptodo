@@ -197,7 +197,7 @@ function insertOpenedsTasksHtml() {
                         <p class="nome">${task.description}</p> 
                         <p class="timestamp">Criada em: ${taskDateFormated}</p>
                         <button type="submit" id="btnTrashTask" class="button-trash">
-                        <img src="../assets/trash.PNG" width="15px" alt="Adicionar uma nova tarefa" id="imgTrash">
+                        <img src="../assets/trash.png" width="15px" alt="Adicionar uma nova tarefa" id="imgTrash">
                       </button>
                     </div>
                 </li>
@@ -254,7 +254,7 @@ function insertClosedsTasksHtml() {
                         <p class="nome">${task.description}</p> 
                         <p class="timestamp2">Criada em: ${taskDateFormated}</p>
                         <button type="submit" id="btnTrashTask" class="button-trash">
-                        <img src="../assets/trash.PNG" width="15px" alt="Adicionar uma nova tarefa" id="imgTrash">
+                        <img src="../assets/trash.png" width="15px" alt="Adicionar uma nova tarefa" id="imgTrash">
                       </button>
                     </div>
                 </li>
